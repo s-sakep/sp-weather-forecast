@@ -61,6 +61,12 @@ p {
   position: relative;
   left: -12px;
 }
+
+.five-icon {
+  font-size: 30px;
+  margin: 0px 0px 10px 0px;
+}
+
 .footer {
   font-size: 11px;
   max-width: 600px;
