@@ -94,6 +94,17 @@ p {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.location-unit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-conditions-container {
+  display: flex;
+  justify-content: start;
+  gap: 24%;
+}
+
 .five-day-container {
   display: flex;
   justify-content: space-between;
@@ -101,4 +112,10 @@ p {
 
 .five-day-container div {
   text-align: center;
+}
+
+.current-key-stats-container {
+  display: flex;
+  justify-content: start;
+  gap: 41%;
 }
