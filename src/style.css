@@ -53,6 +53,7 @@ p {
   width: 19%;
   border-color: cornflowerblue;
   border-width: 1px;
+  background: #d8e8fd;
 }
 
 .units {
@@ -81,12 +82,6 @@ p {
   margin: 0px 10px;
 }
 
-.five-forecast {
-  text-align: center;
-  position: relative;
-  left: -12px;
-}
-
 .five-icon {
   font-size: 30px;
   margin: 0px 0px 10px 0px;
@@ -97,4 +92,13 @@ p {
   max-width: 600px;
   margin: -15px auto;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.five-day-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.five-day-container div {
+  text-align: center;
 }
