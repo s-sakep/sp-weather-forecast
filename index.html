@@ -25,9 +25,10 @@
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             class="search-form-input"
+            id="search-form-input"
             type="search"
             placeholder="Enter a location..."
             required
@@ -39,7 +40,7 @@
       <body>
         <div class="location-unit-container">
           <div>
-            <h1>Oxford</h1>
+            <h1 id="location">Oxford</h1>
           </div>
           <div>
             <div class="units">
@@ -119,5 +120,6 @@
         >.
       </p>
     </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>
