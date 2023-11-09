@@ -56,6 +56,11 @@ p {
   background: #d8e8fd;
 }
 
+.location-unit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .units {
   font-size: 13px;
   margin-top: 30px;
@@ -67,19 +72,41 @@ p {
   font-size: 18px;
 }
 
+.current-conditions-container {
+  display: flex;
+  justify-content: start;
+  gap: 24%;
+}
+
+.today-icon {
+  font-size: 118px;
+  padding-top: 35px;
+  margin: 0px 10px;
+}
+
 .today-temp {
   font-size: 100px;
   margin: 0px 0px -30px 0px;
+}
+
+.current-key-stats-container {
+  display: flex;
+  justify-content: start;
+  gap: 41%;
 }
 
 .current-conditions {
   font-weight: 500;
   font-size: 30px;
 }
-.today-icon {
-  font-size: 118px;
-  padding-top: 35px;
-  margin: 0px 10px;
+
+.five-day-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.five-day-container div {
+  text-align: center;
 }
 
 .five-icon {
@@ -92,30 +119,4 @@ p {
   max-width: 600px;
   margin: -15px auto;
   color: rgba(0, 0, 0, 0.6);
-}
-
-.location-unit-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.current-conditions-container {
-  display: flex;
-  justify-content: start;
-  gap: 24%;
-}
-
-.five-day-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.five-day-container div {
-  text-align: center;
-}
-
-.current-key-stats-container {
-  display: flex;
-  justify-content: start;
-  gap: 41%;
 }
