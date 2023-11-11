@@ -1,6 +1,8 @@
 function refreshWeather(response) {
   let currentTemperatureElement = document.querySelector("#current-temp");
   let currentTemperature = response.data.temperature.current;
+  let locationElement = document.querySelector("#location");
+
   let descriptionElement = document.querySelector("#current-conditions");
   let humidityElement = document.querySelector("#current-humidity");
   let currentWindElement = document.querySelector("#current-wind");
@@ -12,6 +14,7 @@ function refreshWeather(response) {
   console.log(response.data);
 
   currentTemperatureElement.innerHTML = `${Math.round(currentTemperature)}°`;
+  locationElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   currentWindElement.innerHTML = Math.round(response.data.wind.speed);
@@ -72,8 +75,7 @@ function searchLocation(location) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-  let locationElement = document.querySelector("#location");
-  locationElement.innerHTML = searchInput.value;
+
   searchLocation(searchInput.value);
 }
 
