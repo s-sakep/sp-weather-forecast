@@ -91,13 +91,16 @@ p {
 
 .current-key-stats-container {
   display: flex;
-  justify-content: start;
-  gap: 41%;
+  justify-content: space-between;
 }
 
 .current-conditions {
   font-weight: 500;
   font-size: 30px;
+}
+
+.current-conditions:first-letter {
+  text-transform: capitalize;
 }
 
 .five-day-container {

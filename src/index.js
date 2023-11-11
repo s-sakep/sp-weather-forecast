@@ -3,10 +3,16 @@ function refreshWeather(response) {
   let currentTemperature = response.data.temperature.current;
   let descriptionElement = document.querySelector("#current-conditions");
   let humidityElement = document.querySelector("#current-humidity");
+  let currentWindElement = document.querySelector("#current-wind");
+  let feelsLikeElement = document.querySelector("#feels-like");
+
+  console.log(response.data);
 
   currentTemperatureElement.innerHTML = `${Math.round(currentTemperature)}°`;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
+  currentWindElement.innerHTML = Math.round(response.data.wind.speed);
+  feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
 }
 
 function searchLocation(location) {
