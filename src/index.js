@@ -2,9 +2,11 @@ function refreshWeather(response) {
   let currentTemperatureElement = document.querySelector("#current-temp");
   let currentTemperature = response.data.temperature.current;
   let descriptionElement = document.querySelector("#current-conditions");
+  let humidityElement = document.querySelector("#current-humidity");
 
   currentTemperatureElement.innerHTML = `${Math.round(currentTemperature)}°`;
   descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
 }
 
 function searchLocation(location) {
