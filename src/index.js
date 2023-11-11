@@ -7,6 +7,7 @@ function refreshWeather(response) {
   let feelsLikeElement = document.querySelector("#feels-like");
   let todayDateTimeElement = document.querySelector("#today-date-time");
   let now = new Date();
+  let todayIconElement = document.querySelector("#today-icon");
 
   console.log(response.data);
 
@@ -16,6 +17,7 @@ function refreshWeather(response) {
   currentWindElement.innerHTML = Math.round(response.data.wind.speed);
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   todayDateTimeElement.innerHTML = formatDateTime(now);
+  todayIconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="today-icon" />`;
 }
 
 function formatDateTime(now) {

@@ -75,13 +75,14 @@ p {
 .current-conditions-container {
   display: flex;
   justify-content: start;
-  gap: 24%;
+  gap: 16%;
 }
 
 .today-icon {
-  font-size: 118px;
-  padding-top: 35px;
-  margin: 0px 10px;
+  width: 210px;
+  height: 210px;
+  margin-left: -40px;
+  margin-top: -10px;
 }
 
 .today-temp {
