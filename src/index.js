@@ -1,8 +1,10 @@
 function refreshWeather(response) {
   let currentTemperatureElement = document.querySelector("#current-temp");
   let currentTemperature = response.data.temperature.current;
+  let descriptionElement = document.querySelector("#current-conditions");
 
-  currentTemperatureElement.innerHTML = Math.round(currentTemperature);
+  currentTemperatureElement.innerHTML = `${Math.round(currentTemperature)}°`;
+  descriptionElement.innerHTML = response.data.condition.description;
 }
 
 function searchLocation(location) {
