@@ -5,6 +5,8 @@ function refreshWeather(response) {
   let humidityElement = document.querySelector("#current-humidity");
   let currentWindElement = document.querySelector("#current-wind");
   let feelsLikeElement = document.querySelector("#feels-like");
+  let todayDateTimeElement = document.querySelector("#today-date-time");
+  let now = new Date();
 
   console.log(response.data);
 
@@ -13,6 +15,50 @@ function refreshWeather(response) {
   humidityElement.innerHTML = response.data.temperature.humidity;
   currentWindElement.innerHTML = Math.round(response.data.wind.speed);
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
+  todayDateTimeElement.innerHTML = formatDateTime(now);
+}
+
+function formatDateTime(now) {
+  let date = now.getDate();
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let year = now.getFullYear();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+
+  return `${day} ${date} ${month} ${year} | ${hours}:${minutes}`;
 }
 
 function searchLocation(location) {
