@@ -6,6 +6,7 @@ function refreshWeather(response) {
   let descriptionElement = document.querySelector("#current-conditions");
   let humidityElement = document.querySelector("#current-humidity");
   let currentWindElement = document.querySelector("#current-wind");
+  let windSpeed = response.data.wind.speed;
   let feelsLikeElement = document.querySelector("#feels-like");
   let todayDateTimeElement = document.querySelector("#today-date-time");
   let now = new Date();
@@ -17,10 +18,16 @@ function refreshWeather(response) {
   locationElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
-  currentWindElement.innerHTML = Math.round(response.data.wind.speed);
+  currentWindElement.innerHTML = getImperialSpeed(windSpeed);
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   todayDateTimeElement.innerHTML = formatDateTime(now);
   todayIconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="today-icon" />`;
+}
+
+function getImperialSpeed(metricWindSpeed) {
+  console.log(metricWindSpeed);
+  let imperialWindSpeed = Math.round(metricWindSpeed * 2.237);
+  return `${imperialWindSpeed}`;
 }
 
 function formatDateTime(now) {
