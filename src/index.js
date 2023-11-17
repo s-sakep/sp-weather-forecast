@@ -90,3 +90,28 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchLocation("Oxford");
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#five-day-forecast");
+
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div>
+    <p>${day}</p>
+    <i class="fa-solid fa-cloud-showers-heavy five-icon"></i>
+    <p>
+      <span class="five-day-high">19°</span> | 9°
+    </p>
+  </div>
+`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
