@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  padding: 20px 0 0px 0;
+  padding: 15px 0 0px 0;
 }
 
 h1 {
@@ -38,7 +38,7 @@ p {
 .search-form-input {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
-  border-radius: 6px;
+  border-radius: 7px;
   width: 80%;
   padding: 8px 20px;
   border-color: cornflowerblue;
@@ -114,8 +114,9 @@ p {
 }
 
 .five-icon {
-  font-size: 30px;
-  margin: 0px 0px 10px 0px;
+  width: 70px;
+  height: 70px;
+  margin: -15px -3px 0px 0px;
 }
 
 .five-day-high {

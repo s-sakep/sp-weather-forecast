@@ -22,6 +22,8 @@ function refreshWeather(response) {
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   todayDateTimeElement.innerHTML = formatDateTime(now);
   todayIconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="today-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 function getImperialSpeed(metricWindSpeed) {
@@ -91,24 +93,50 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchLocation("Oxford");
 
-function displayForecast() {
+function getForecast(location) {
+  let apiKey = "3bo46ec9b6bf9d00tea420a5e23db416";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${location}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#five-day-forecast");
 
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index > 0 && index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `
   <div>
-    <p>${day}</p>
-    <i class="fa-solid fa-cloud-showers-heavy five-icon"></i>
+    <p>${formatDay(day.time)}</p>
+    <img src="${day.condition.icon_url}" class="five-icon" /></i>
     <p>
-      <span class="five-day-high">19°</span> | 9°
+      <span class="five-day-high">${Math.round(
+        day.temperature.maximum
+      )}°</span> | ${Math.round(day.temperature.minimum)}°
     </p>
   </div>
 `;
+    }
   });
 
   forecastElement.innerHTML = forecastHtml;
