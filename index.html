@@ -24,76 +24,73 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="weather-app">
-      <header>
-        <form class="search-form" id="search-form">
-          <input
-            class="search-form-input"
-            id="search-form-input"
-            type="search"
-            placeholder="Enter a location..."
-            required
-          />
-          <input class="search-form-button" type="submit" value="Search" />
-        </form>
-      </header>
+    <div class="container">
+      <div class="weather-app">
+        <header>
+          <form class="search-form" id="search-form">
+            <input
+              class="search-form-input"
+              id="search-form-input"
+              type="search"
+              placeholder="Enter a location..."
+              required
+            />
+            <input class="search-form-button" type="submit" value="Search" />
+          </form>
+        </header>
 
-      <body>
-        <div class="location-unit-container">
-          <div>
+        <body>
+          <div class="location-unit-container">
             <h1 id="location">Oxford</h1>
           </div>
-          <div>
-            <div class="units">
-              Display temp in <a href="#">°C</a> |
-              <a href="#">°F</a>
+
+          <div class="today-date" id="today-date-time"></div>
+
+          <div class="current-conditions-container">
+            <div id="today-icon"></div>
+            <div>
+              <div class="today-temp" id="current-temp"></div>
+
+              <div class="current-conditions" id="current-conditions"></div>
+              <br />
             </div>
           </div>
-        </div>
 
-        <div class="today-date" id="today-date-time"></div>
+          <div class="current-key-stats-container">
+            <div>
+              <p>Feels like: <span id="feels-like"></span>°</p>
+            </div>
+            <div>
+              <p>Humidity: <span id="current-humidity"></span>%</p>
+            </div>
+            <div>
+              <p>Wind: <span id="current-wind"></span> mph</p>
+            </div>
+          </div>
 
-        <div class="current-conditions-container">
-          <div id="today-icon"></div>
-          <div>
-            <div class="today-temp" id="current-temp">°</div>
-            <div class="current-conditions" id="current-conditions"></div>
-            <br />
-          </div>
-        </div>
+          <hr />
+          <h2>Next five days</h2>
+          <div class="five-day-container" id="five-day-forecast"></div>
+        </body>
+      </div>
 
-        <div class="current-key-stats-container">
-          <div>
-            <p>Feels like: <span id="feels-like"></span>°</p>
-          </div>
-          <div>
-            <p>Humidity: <span id="current-humidity"></span>%</p>
-          </div>
-          <div>
-            <p>Wind: <span id="current-wind"></span> mph</p>
-          </div>
-        </div>
-
-        <hr />
-        <h2>Next five days</h2>
-        <div class="five-day-container" id="five-day-forecast"></div>
-      </body>
+      <footer>
+        <p class="footer">
+          Coded by
+          <a href="https://github.com/s-sakep" target="_blank">Sarah Pakes</a>,
+          open sourced on
+          <a
+            href="https://github.com/s-sakep/sp-weather-forecast"
+            target="_blank"
+            >GitHub</a
+          >
+          and hosted by
+          <a href="https://sarahs-weather-forecast.netlify.app/" target="_blank"
+            >Netlify</a
+          >.
+        </p>
+      </footer>
     </div>
-
-    <footer>
-      <p class="footer">
-        Coded by
-        <a href="https://github.com/s-sakep" target="_blank">Sarah Pakes</a>,
-        open sourced on
-        <a href="https://github.com/s-sakep/sp-weather-forecast" target="_blank"
-          >GitHub</a
-        >
-        and hosted by
-        <a href="https://sarahs-weather-forecast.netlify.app/" target="_blank"
-          >Netlify</a
-        >.
-      </p>
-    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>
